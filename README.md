@@ -46,8 +46,12 @@ GLASS/
 ├── requirements.txt
 └── README.md
 
-##  Install dependencies:
+---
+
+##  Install dependencies
 pip install -r requirements.txt
+
+---
 
 ## Usage
 python main.py
@@ -57,6 +61,8 @@ This will:
   Generate explainability plots
   Search for optimal adaptations
   Save results to a CSV file
+
+---
 
 ## Output
 Explainability plots saved under:

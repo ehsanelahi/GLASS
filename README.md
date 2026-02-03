@@ -1,7 +1,7 @@
 
 
-**GLASS** is a Python-based intelligent planning and adaptation framework that uses
-machine learning, counterfactual reasoning, and explainability techniques to find
+**GLASS** is a Python-based planning and adaptation framework that uses
+machine learning, counterfactual reasoning, and partial dependence plots to find
 optimal adaptations that satisfy multiple system requirements.
 
 The project combines:
@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 ---
 
-## Usage
+## ▶️ Usage
 python main.py
 
 This will:
@@ -64,7 +64,7 @@ This will:
 
 ---
 
-## Output
+## 📊 Output
 Explainability plots saved under:
 explainability_plots/
 

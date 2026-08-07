@@ -16,7 +16,7 @@ The project combines:
 
 - 🤖 Requirement satisfaction using trained ML classifiers
 - 🔁 Counterfactual-based adaptation generation
-- 📊 Explainability via Partial Dependence Plots (PDP)
+- 📊 Refinement via Partial Dependence Plots (PDPs)
 - 🎯 Optimization-driven adaptation selection
 - 🧠 Supports multiple requirements simultaneously
 

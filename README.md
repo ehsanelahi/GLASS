@@ -32,8 +32,8 @@ The project combines:
 ---
 
 ## 📂 Project Structure
-
 ```text
+
 GLASS/
 ├── main.py                     # Entry point
 ├── CustomPlanner.py             # Core planning logic
@@ -46,6 +46,7 @@ GLASS/
 ├── requirements.txt
 └── README.md
 
+```
 ---
 
 ##  Install dependencies
@@ -67,6 +68,9 @@ This will:
 ## 📊 Output
 Explainability plots saved under:
 explainability_plots/
+
+Sensitivity plots saved under:
+sensitivity_plots/
 
 Adaptation results saved as:
 custom.csv

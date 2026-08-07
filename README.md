@@ -56,16 +56,17 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 python main.py
-
+```text
 This will:
   Train ML models for each requirement
   Generate explainability plots
   Search for optimal adaptations
   Save results to a CSV file
-
+```
 ---
 
 ## 📊 Output
+```text
 Explainability plots saved under:
 explainability_plots/
 
@@ -74,3 +75,5 @@ sensitivity_plots/
 
 Adaptation results saved as:
 custom.csv
+
+```

@@ -1,4 +1,5 @@
 import matplotlib
+matplotlib.use("Agg")  # plots are only written to disk
 import matplotlib.pyplot as plt
 import numpy as np
 import sklearn.inspection as ins
@@ -10,6 +11,14 @@ font = {'family' : 'sans',
         'size'   : 12}
 
 matplotlib.rc('font', **font)
+
+def _gridValues(pdp):
+
+    result = pdp.pd_results[0]
+    if "grid_values" in result:
+        return result["grid_values"][0]
+    return result["values"][0]
+
 
 def partialDependencePlot(model, X_train, features, kind, path=None):
     pdp = ins.PartialDependenceDisplay.from_estimator(model, X_train, features, kind=kind, percentiles=(0, 1))
@@ -41,7 +50,7 @@ def getMaximalsOfLine(pdp, lineIndex):
         yVals = pdp.pd_results[0]["individual"][0][lineIndex, :]
     else:
         yVals = pdp.pd_results[0]["average"][0, :]
-    xVals = pdp.pd_results[0]["values"][0]
+    xVals = _gridValues(pdp)
 
     maxX = xVals[np.where(yVals == yVals.max())]
 
@@ -66,7 +75,7 @@ def getMaxOfMeanLine(pdp):
 
 
 def getSlope(pdp, x, lineIndex):
-    xVals = pdp.pd_results[0]["values"][0]
+    xVals = _gridValues(pdp)
     linesY = pdp.pd_results[0]["individual"][0][lineIndex, :]
     index = len(xVals) - 1
     for i in range(len(xVals)):
@@ -98,7 +107,7 @@ def getGlobalMax(pdp, lineIndex=-1):
     best_y : float
         Maximum predicted probability at that feature value.
     """
-    xVals = pdp.pd_results[0]["values"][0]
+    xVals = _gridValues(pdp)
 
     if lineIndex >= 0:
         yVals = pdp.pd_results[0]["individual"][0][lineIndex, :]

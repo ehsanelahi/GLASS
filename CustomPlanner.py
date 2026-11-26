@@ -67,7 +67,8 @@ class CustomPlanner:
                     path = os.path.join(plotsPath, f"req_{j}")
                     os.makedirs(path, exist_ok=True)
                 self.pdps[i].append(pdp.partialDependencePlot(
-                    reqClassifier, X, [feature], "both", os.path.join(path, f"{feature}.png")
+                    reqClassifier, X, [feature], "both",
+                    os.path.join(path, f"{feature}.png") if path is not None else None
                 ))
 
         self.summaryPdps = []
@@ -77,7 +78,7 @@ class CustomPlanner:
                 path = os.path.join(plotsPath, "summary")
                 os.makedirs(path, exist_ok=True)
             self.summaryPdps.append(pdp.multiplyPdps(
-                self.pdps[i], os.path.join(path, f"{feature}.png")
+                self.pdps[i], os.path.join(path, f"{feature}.png") if path is not None else None
             ))
 
         print("Total offline preprocessing duration:", time.time() - preprocessingStartTime, "seconds\n" + "=" * 100)

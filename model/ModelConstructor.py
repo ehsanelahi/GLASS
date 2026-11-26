@@ -2,7 +2,6 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-from IPython.display import display
 from sklearn.linear_model import LogisticRegression  # Logistic Regression
 from sklearn.ensemble import RandomForestClassifier  # Random Forests
 from sklearn.tree import DecisionTreeClassifier  # C5.0 (Decision Tree)
@@ -68,6 +67,7 @@ def constructModel(X_train, X_test, y_train, y_test, export=False):
 
     # Visualise the performance of defect models
     if export:
+        from IPython.display import display  # optional dependency, only for notebook export
         display(model_performance_df)
         model_performance_df.plot(kind='barh', y='AUC', x='Model')
         plt.tight_layout()
